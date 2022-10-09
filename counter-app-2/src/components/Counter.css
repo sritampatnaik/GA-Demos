@@ -1,0 +1,13 @@
+
+section {
+ display: flex;
+ margin: 20px;
+}
+
+button {
+ flex: 1;
+}
+
+span {
+ font-size: 20px;
+}
