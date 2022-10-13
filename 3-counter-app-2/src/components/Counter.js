@@ -43,30 +43,17 @@ function Counter(props) {
     }
 
     const handleDecrease = () => {
-        let newActivities = [...activities]; // Copy current to new array
-        newActivities.push("Decrease"); // Add new element to new array
-        setActivities(newActivities); // Assign new array to state
+        setActivities([...activities, "Decrease"])
 
-        let newCounterObj = {...counterObj};
-        newCounterObj.count--;
-        newCounterObj.color="pink";
-        if(newCounterObj.count < -3){
-            // if count is lesser than -3, call the handleReset()
-            handleReset();
-        }else{
-            // else, proceed as usual        
-            setCounterObj(newCounterObj);
-        }
+        counterObj.count === -3 ? handleReset() :  setCounterObj({
+            ...counterObj,
+            color: 'pink',
+            count: counterObj.count - 1
+        })
     }
 
 
     const handleReset = () => {
-
-        // let newCounterObj = {...counterObj}; // clone the counter obj
-        // newCounterObj.resetCount++; // increment counter resetCount value
-        // newCounterObj.count = 0; // reset count to 0
-        // newCounterObj.color = null; // reset color to null
-        // setCounterObj(newCounterObj); // assign the new object to the state
 
         setCounterObj({
             ...counterObj,            
@@ -84,7 +71,7 @@ function Counter(props) {
             <div>Reset Count: {counterObj.resetCount}</div>
             <section>
                 <button onClick={handleIncrease}>+</button>
-                <button onClick={handleDecrease} >-</button>
+                <button onClick={handleDecrease}>-</button>
                 <button onClick={handleReset}>Reset</button> 
             </section>
 
