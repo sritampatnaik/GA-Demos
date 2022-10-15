@@ -23,7 +23,10 @@ const Counter = () => {
         setCount((prevState) => prevState + 1)
       }, 2000);
     }
-    return () => clearInterval(interval);
+      return () => {
+        console.log("Cleanup")
+        clearInterval(interval)
+    };
   }, [toggle]);
 
   const handleToggle = () => {
