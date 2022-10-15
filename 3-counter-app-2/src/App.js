@@ -1,8 +1,9 @@
 import './App.css';
 // import Counter from './components/Counter';
 // import History from "./components/History";
-import Timer from './components/Timer'
-import {useState} from "react";
+// import {useState} from "react";
+// import Timer from './components/Timer';
+import Form from './components/Form';
 
 function App() {
 
@@ -17,9 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Counter initialCount={0} addActivity={addActivity}/>
-      <History activities={activities}/> */}
-      <Timer/>
+      <Form />
     </div>
   );
 }

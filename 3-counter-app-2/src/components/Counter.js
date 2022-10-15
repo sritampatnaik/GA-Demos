@@ -2,8 +2,7 @@ import "./Counter.css"
 import { useState } from "react"
 
 function Counter(props) {
-
-    const {addActivity} = props;
+    const { addActivity } = props;
 
     // Default States
     const defaultCounterState = {
