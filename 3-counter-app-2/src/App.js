@@ -3,7 +3,8 @@ import './App.css';
 // import History from "./components/History";
 // import {useState} from "react";
 // import Timer from './components/Timer';
-import Form from './components/Form';
+import ControlledForm from './components/ControlledForm';
+import UncontrolledForm from './components/UncontrolledForm';
 
 function App() {
 
@@ -18,7 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <Form />
+        <ControlledForm />
+        <hr/>
+        <UncontrolledForm />
     </div>
   );
 }
