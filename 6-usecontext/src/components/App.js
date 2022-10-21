@@ -10,8 +10,8 @@ const avatarGeneric =
 const avatarRobot =
   'https://res.cloudinary.com/jkeohan/image/upload/v1601989471/avatar-robot_iqcq4k.png';
 
-export const DataContext = createContext() // { DataContext: { Provider: }}
-console.log('App - DataContext', DataContext)
+export const UserContext = createContext() // { DataContext: { Provider: }}
+console.log('App - DataContext', UserContext)
 
 function App() {
   const [userData, setUserData] = useState(userInfo);
@@ -36,11 +36,11 @@ function App() {
         <button>Submit</button>
       </form>
       <br />
-      <DataContext.Provider value={userData}>
+      <UserContext.Provider value={userData}>
         <ComponentA  />
         <hr />
-        <ComponentE userData={userData} />
-      </DataContext.Provider>
+      </UserContext.Provider>
+      <ComponentE userData={userData} />
     </div>
   );
 }
