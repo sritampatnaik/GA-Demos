@@ -1,0 +1,17 @@
+.App {
+  font-family: sans-serif;
+}
+
+.user {
+  border: 1px solid;
+  width:200px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-image {
+  width: 50px;
+}
