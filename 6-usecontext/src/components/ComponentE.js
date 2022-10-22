@@ -2,7 +2,7 @@ import React from "react";
 import ComponentF from "./ComponentF"
 
 
-function ComponentE(props) {
+function ComponentE() {
 
   let style = {
     marginLeft: '20px',
@@ -13,7 +13,7 @@ function ComponentE(props) {
   return (
     <div style={style}>
       This is Component E
-      <ComponentF {...props}/>
+      <ComponentF/>
     </div>
   );
 }

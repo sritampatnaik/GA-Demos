@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { UserContext } from './App'
-console.log("D - DataContext", UserContext)
+import { DataContext } from './App'
+console.log("D - DataContext", DataContext)
 
 
 function ComponentD() {
-  const dataContext = useContext(UserContext)
+  const dataContext = useContext(DataContext)
   console.log('D - dataContext', dataContext)
 
   let style = {

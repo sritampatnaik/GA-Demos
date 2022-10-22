@@ -1,7 +1,7 @@
 // import useContext Hook
 import React from 'react';
 
-function ComponentG(props) {
+function ComponentG() {
   let style = {
     marginLeft: '20px',
     marginTop: '10px'

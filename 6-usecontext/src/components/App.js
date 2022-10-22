@@ -38,7 +38,6 @@ function App() {
       <br />
       <UserContext.Provider value={userData}>
         <ComponentA  />
-        <hr />
       </UserContext.Provider>
       <ComponentE userData={userData} />
     </div>

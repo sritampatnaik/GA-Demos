@@ -4,7 +4,7 @@ import ComponentG from "./ComponentG"
 
 
 
-function ComponentF(props) {
+function ComponentF() {
 
   let style = {
     marginLeft: '20px',
@@ -14,7 +14,7 @@ function ComponentF(props) {
   return (
     <div style={style}>
       This is Component F
-     <ComponentG {...props}/>
+      <ComponentG/>
     </div>
   );
 }
