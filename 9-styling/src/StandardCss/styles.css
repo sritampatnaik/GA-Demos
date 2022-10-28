@@ -1,0 +1,33 @@
+:root {
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --white: #fff;
+}
+
+.container {
+  color: var(--secondary);
+}
+
+.button {
+  color: var(--white);
+  padding: 7px 14px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+
+.primary {
+  background-color: var(--primary);
+}
+
+.secondary {
+  background-color: var(--secondary);
+}
+
+.button:hover {
+  background-color: var(--danger);
+}
