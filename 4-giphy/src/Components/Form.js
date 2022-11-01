@@ -4,10 +4,10 @@ export default function Form(props) {
     const [value, setValue] = useState("");
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault(); // prevent refresh
         const val = value;
         console.log('Loggin in Child', val);
-        props.onChildSubmit(val)
+        props.onChildSubmit(val) // 2. FN_PROPS
     };
 
     return (
