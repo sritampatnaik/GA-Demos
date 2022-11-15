@@ -32,40 +32,26 @@ app.listen(3000, () => {
   console.log("I am listening for requests!!!");
 });
 ```
-## Lesson Objectives
+## Lesson Agenda
+
+Anatomy of a URL:
+<img src="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL/mdn-url-all.png" />
+
 
 1. Route Parameter
     - GET /awesome    
     - GET /:name
-
-    ```js
-        res.send(`Hi, ${name}`);
-    ```
 
 1. Order is important
 
 1. Multiple Params
     - GET /:name/:plantIndex
 
-    ```js
-        res.send(`Hi, ${req.params.name}. You have chosen ${plants[req.params.plantIndex]}. `);
-    ```
-
 1. Inspect Request Object at [expressjs.com](https://expressjs.com)
 
 1. Use of Query String Parameter 
     - All value are captured as string
-    ```js
-        res.send(`Hi, ${req.params.name}. You have chosen ${plants[req.params.plantIndex]}. ${req.query.appendText}`);
-    ```
     - GET /:name/:plantIndex?appendText=&repeat=
-    ```js
-        let resBody = "";
-        for(let i=0 ; i<Number(req.query.repeat) ; i++){
-            resBody += `Hi, ${req.params.name}. You have chosen ${plants[req.params.plantIndex]}. ${req.query.appendText}`;
-        }
-        res.send(resBody);
-    ```
 
 1. Use [dotenv library](https://www.npmjs.com/package/dotenv) to load environment variables from .env file
   
