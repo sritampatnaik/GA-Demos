@@ -4,9 +4,11 @@
 
 |#|Item|Duration|
 |-|-----|--------|
-|1|Lesson|1 hr 20 mins|
+|1|Career Services|1 hr|
 |-|BREAK|10 mins|
-|2|Lab|1 hr 20 mins|
+|2|Lesson|1 hr|
+|-|BREAK|10 mins|
+|3|Lab|40 mins|
 
 ## Start Lesson Code
 
