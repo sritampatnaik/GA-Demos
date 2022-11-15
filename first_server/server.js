@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const app = express();
 
@@ -8,11 +9,16 @@ const plants = [
   "Witches' Butter",
 ];
 
-app.get("/", (req, res) => {
-  console.log("Oh hey! I got a request. Let me respond with something");
-  res.send("Hello World!");
+app.get("/awesome", (req, res) => {
+  res.send("I am awesome!");
 });
 
-app.listen(3000, () => {
-  console.log("I am listening for requests!!!");
+// http://localhost:4000/edison/2?appendText=Shall%20we%20cook?
+app.get("/:name/:plantIndex", (req, res) => {
+  console.log(req.query);
+  res.send(`Hi, ${req.params.name}. You have selected ${plants[req.params.plantIndex]}. ${req.query.appendText}`);
+});
+
+app.listen(process.env.PORT, () => {
+  console.log(`I am listening to port ${process.env.PORT}`);
 });

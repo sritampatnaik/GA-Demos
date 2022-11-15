@@ -85,6 +85,9 @@ The 7 RESTful routes that allow us basic operations for reading and manipulating
 |6| /photos/:id      | PATCH/PUT | update |application/json|
 |7| /photos/:id      | DELETE    | destroy|application/json|
 
+> PUT is used to update entire object.
+> PATCH is used to update partial object.
+
 ## Apply RESTful to an array of plants
 
 Note: We will temporary exclude endpoint (2) and (5) from the above table. That would gives us:
