@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Plant</title>
+    <script>
+        
+
+        function buttonPressed(){
+           
+            const value = document.querySelector("#data").value;
+            const body = JSON.stringify({data:value})
+
+            fetch("/plants", {
+                method:"POST",
+                headers: {
+                    'Content-Type': 'application/json'                
+                },
+                body:body
+            })
+            .then(res=>{
+                if(res.status === 201){
+                    alert("Create successful!")
+                }else{
+                    alert("Create failed!") 
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="data" /> <button onClick="buttonPressed()">Create</button>
+    </form>
+</body>
+</html>

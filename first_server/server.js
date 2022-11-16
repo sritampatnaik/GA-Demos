@@ -13,6 +13,18 @@ const plants = [
   "Witches' Butter",
 ];
 
+// EJS
+
+app.get("/plants/:id/edit", (req, res) => {
+  const index = req.params.id;
+  res.render("edit.ejs", {index, value:plants[index]});
+})
+
+app.get("/plants/new", (req, res) => {
+  res.render("new.ejs", {}); 
+})
+
+// REST
 
 app.get("/plants", (req, res) => {
   res.json(plants);
@@ -39,7 +51,7 @@ app.post("/plants", (req, res) => {
 app.put("/plants/:id", (req, res) => {
   const {data} = req.body;
   const index = req.params.id;
-
+  console.log("PUT", req.body, index);
   if(index > (plants.length - 1)) return res.sendStatus(httpStatus.BAD_REQUEST); // Unable to find the id (index)
 
   plants[index] = data;
