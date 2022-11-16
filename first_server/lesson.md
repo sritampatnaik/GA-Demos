@@ -67,8 +67,6 @@ Anatomy of a URL:
 |-|BREAK|10 mins|
 |2|Lesson - MVC Model|1 hr 20 mins|
 
-> Lab on saturday
-
 ## Introduction to RESTful
 
 > RESTful API is a convention on how online resources can be read and manipulated via HTTP Endpoints.
