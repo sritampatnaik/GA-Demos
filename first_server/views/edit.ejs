@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buttonPressed(){
+            const index = <%= index %>;            
+            const value = document.querySelector("#data").value;
+            const body = JSON.stringify({value})
+            fetch("/plants/"+index, {
+                method:"PUT",
+                headers: {
+                    'Content-Type': 'application/json'                
+                },
+                body:body
+            })
+            .then(res=>{
+                if(res.status === 200){
+                    alert("Update successful!")
+                }else{
+                    alert("Update failed!") 
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="data" value="<%= value %>" /> <button onClick="buttonPressed()">Update</button>
+    </form>
+</body>
+</html>
