@@ -1,20 +1,21 @@
-# Lesson - URL Parameters
+# Lesson - RESTful
 
 ## Lesson Plan
 
 |#|Item|Duration|
 |-|-----|--------|
-|1|Career Services|1 hr|
+|1|Lesson - RESTful|1 hr|
 |-|BREAK|10 mins|
-|2|Lesson|1 hr|
+|2|Lesson - MVC Model with EJS|50 mins|
 |-|BREAK|10 mins|
-|3|Lab|40 mins|
+|3|Lab + Q&A|
 
-## Start Lesson Code
+## Starter Code
 
-Copy & paste this code to `server.js` before lesson begins.
+Replace `server.js` with the code below.
 
 ```js
+require('dotenv').config()
 const express = require("express");
 const app = express();
 
@@ -25,49 +26,10 @@ const plants = [
   "Witches' Butter",
 ];
 
-app.get("/", (req, res) => {
-  console.log("Oh hey! I got a request. Let me respond with something");
-  res.send("Hello World!");
-});
-
-app.listen(3000, () => {
-  console.log("I am listening for requests!!!");
+app.listen(process.env.PORT, () => {
+  console.log(`I am listening to port ${process.env.PORT}`);
 });
 ```
-## Lesson Agenda
-
-Anatomy of a URL:
-<img src="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL/mdn-url-all.png" />
-
-
-1. Route Parameter
-    - GET /awesome    
-    - GET /:name
-
-1. Order is important
-
-1. Multiple Params
-    - GET /:name/:plantIndex
-
-1. Inspect Request Object at [expressjs.com](https://expressjs.com)
-
-1. Use of Query String Parameter 
-    - All value are captured as string
-    - GET /:name/:plantIndex?appendText=&repeat=
-
-1. Use [dotenv library](https://www.npmjs.com/package/dotenv) to load environment variables from .env file
-  
-# Lesson - RESTful
-
-## Lesson Plan
-
-|#|Item|Duration|
-|-|-----|--------|
-|1|Lesson - RESTful|1 hr 20 mins|
-|-|BREAK|10 mins|
-|2|Lesson - MVC Model|1 hr 20 mins|
-
-> Lab on saturday
 
 ## Introduction to RESTful
 
@@ -77,25 +39,60 @@ The 7 RESTful routes that allow us basic operations for reading and manipulating
 
 |#| **URL** | **HTTP Verb** |  **Action**|**Content Type**|
 |-|------------|-------------|------------|---------------|
-|1| /photos/         | GET       | index  |application/json|
-|2| /photos/new      | GET       | new    |text/html|
-|3| /photos          | POST      | create |application/json|  
-|4| /photos/:id      | GET       | show   |application/json|
-|5| /photos/:id/edit | GET       | edit   |text/html|
-|6| /photos/:id      | PATCH/PUT | update |application/json|
-|7| /photos/:id      | DELETE    | destroy|application/json|
+|1| /plants          | GET       | index  |application/json|
+|2| /plants/new      | GET       | new    |text/html|
+|3| /plants          | POST      | create |application/json|  
+|4| /plants/:id      | GET       | show   |application/json|
+|5| /plants/:id/edit | GET       | edit   |text/html|
+|6| /plants/:id      | PATCH/PUT | update |application/json|
+|7| /plants/:id      | DELETE    | destroy|application/json|
 
 > PUT is used to update entire object.
 > PATCH is used to update partial object.
 
-## Apply RESTful to an array of plants
+## Hands On - Implementing RESTful Endpoints
 
-Note: We will temporary exclude endpoint (2) and (5) from the above table. That would gives us:
+Install:
+
+```sh
+npm i http-status body-parser
+```
 
 |#| **URL** | **HTTP Verb** |  **Action**|**Content Type**|
 |-|------------|-------------|------------|---------------|
-|1| /photos/         | GET       | index  |application/json|
-|2| /photos          | POST      | create |application/json|  
-|3| /photos/:id      | GET       | show   |application/json|
-|4| /photos/:id      | PUT       | update |application/json|
-|5| /photos/:id      | DELETE    | destroy|application/json|
+|1| /plants/         | GET       | index  |application/json|
+|2| /plants          | POST      | create |application/json|  
+|3| /plants/:id      | GET       | show   |application/json|
+|4| /plants/:id      | PUT       | update |application/json|
+|5| /plants/:id      | DELETE    | destroy|application/json|
+
+## Introducing Concept - MVC
+
+<img src="./images/mvc.png" />
+
+Separating the:
+- model (data)
+- view (what user interacts with)
+- controller (logics)
+
+> There is no database at the moment, we will see the full example after database lesson.
+
+## Hands On - Coding with EJS
+
+Install:
+```sh
+npm i ejs
+```
+
+|#| **URL** | **HTTP Verb** |  **Action**|**Content Type**|
+|-|------------|-------------|------------|---------------|
+|1| /plants/new      | GET       | new    |text/html|
+|2| /plants/:id/edit | GET       | edit   |text/html|
+
+<img src="./images/ejs-wire.png" />
+
+## Lab
+
+> Check in for 26 Nov DevFest interests
+
+[Link](https://git.generalassemb.ly/sei-sg/SEIF-11/blob/master/unit_3/w14d03/labs/exobiology_delete.md)
